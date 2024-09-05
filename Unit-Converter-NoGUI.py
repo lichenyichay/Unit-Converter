@@ -142,7 +142,29 @@ def kmtom(x: float) -> float:
     """
     return x * 1000.0
 
+def μmtomm(x:float) -> float:
+    '''
+    :rtype:float
+    '''
+    return x/1000.0
 
+def mmtoμm(x:float) -> float:
+    '''
+    :rtype:float
+    '''
+    return x*1000.0
+
+def nmtoμm(x:float) -> float:
+    '''
+    :rtype:float
+    '''
+    return x/1000.0
+
+def μmtonm(x:float) -> float:
+    '''
+    :rtype:float
+    '''
+    return x*1000.0
 # 物理量换算函数
 
 
@@ -181,6 +203,7 @@ def Vsudu(Slu=0.0,t=0.0) -> float:
     else:
         raise ValueError("参数无效！")
 
+
 def p(F = 0.0,S = 0.0,ρ = 0.0,g = 9.8, h=0.0) -> float:
     if F != 0 and S != 0:
         return F/S
@@ -188,6 +211,7 @@ def p(F = 0.0,S = 0.0,ρ = 0.0,g = 9.8, h=0.0) -> float:
         return ρ*g*h
     else:
         raise ValueError("参数无效！")
+
 
 def I(U = 0.0,R = 0.0,Pgong = 0.0) -> float:
     if U != 0 and R != 0:
@@ -197,6 +221,7 @@ def I(U = 0.0,R = 0.0,Pgong = 0.0) -> float:
     else:
         raise ValueError("参数无效！")
 
+
 def U(I = 0.0,R = 0.0,Pgong = 0.0) -> float:
     if I != 0 and R != 0:
         return I*R
@@ -205,17 +230,203 @@ def U(I = 0.0,R = 0.0,Pgong = 0.0) -> float:
     else:
         raise ValueError("参数无效！")
 
+
 def R(I = 0.0,U = 0.0) -> float:
     if U != 0 and I != 0:
         return U/I
     else:
         raise ValueError("参数无效！")
 
+
 def Pgong(U=0.0,I=0.0) -> float:
     if U != 0 and I != 0:
         return U*I
     else:
         raise ValueError("参数无效！")
+def UnitConverter(mode:int,args:dict) -> float:
+    if mode > 33 or mode < 1:
+        raise ValueError("mode参数需在1-33之间！")
+    else:
+        if mode == 1:
+            if "mm" in args.keys:
+                return mmtocm(args['mm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 2:
+            if "mm" in args.keys:
+                return mmtodm(args['mm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 3:
+            if "mm" in args.keys:
+                return mmtom(args['mm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 4:
+            if "mm" in args.keys:
+                return mmtom(args['mm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 5:
+            if "cm" in args.keys:
+                return cmtodm(args['cm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 6:
+            if "cm" in args.keys:
+                return cmtom(args['cm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 7:
+            if "cm" in args.keys:
+                return cmtokm(args['cm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 8:
+            if "dm" in args.keys:
+                return dmtom(args['dm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 9:
+            if "dm" in args.keys:
+                return dmtokm(args['dm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 10:
+            if "m" in args.keys:
+                return mtokm(args['m'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 11:
+            if "cm" in args.keys:
+                return cmtomm(args['cm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！")  
+            pass
+        elif mode == 12:
+            if "dm" in args.keys:
+                return dmtomm(args['dm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 13:
+            if "m" in args.keys:
+                return mtomm(args['m'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 14:
+            if "km" in args.keys:
+                return kmtomm(args['km'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 15:
+            if "dm" in args.keys:
+                return dmtocm(args['dm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 16:
+            if "m" in args.keys:
+                return mtocm(args['m'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 17:
+            if "km" in args.keys:
+                return kmtocm(args['km'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 18:
+            if "m" in args.keys:
+                return mtodm(args['m'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 19:
+            if "km" in args.keys:
+                return kmtodm(args['km'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 20:
+            if "km" in args.keys:
+                return kmtom(args['km'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！") 
+            pass
+        elif mode == 21:
+            if "μm" in args.keys:
+                return μmtomm(args['μm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！")
+        elif mode == 22:
+            if "mm" in args.keys:
+                return mmtoμm(args['mm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！")
+        elif mode == 23:
+            if "nm" in args.keys:
+                return nmtoμm(args['μm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！")
+        elif mode == 24:
+            if "μm" in args.keys:
+                return μmtonm(args['μm'])
+            else:
+                raise ValueError("缺少参数或参数类型错误！")
+        elif mode == 25:
+            if ('V' in args.keys and 'm' in args.keys):
+                return ρ(V=args['V'],m=args['m'])
+            elif ('p' in args.keys and 'h' in args.keys):
+                return ρ(p=args['p'],h=args['h'])
+            elif ('Ffu' in args.keys and 'V' in args.keys):
+                if 'g' in args.keys:
+                    return ρ(g=args['g'],Ffu = args['Ffu'],V=args['V'])
+                else:
+                    return ρ(Ffu = args['Ffu'],V=args['V'])
+            else:
+                raise ValueError("缺少参数！")
+        elif mode == 26:
+            if 'm' in args.keys and 'ρ' in args.keys:
+                return Vtiji(m=args['m'],ρ=args['ρ'])
+            elif 'Ffu' in args.keys and 'ρ' in args.keys:
+                if 'g' in args.keys:
+                    return Vtiji(Ffu=args['Ffu'],ρ=args['ρ'],g = args['g'])
+                else:
+                    return Vtiji(Ffu=args['Ffu'],ρ=args['ρ'])
+            else:
+                raise ValueError("缺少参数！")
+        elif mode == 27:
+            if ():
+                pass
+            else:
+                raise ValueError("缺少参数！")
+        elif mode == 28:
+            pass
+        elif mode == 29:
+            pass
+        elif mode == 30:
+            pass
+        elif mode == 31:
+            pass
+        elif mode == 32:
+            pass
+        elif mode == 33:
+            pass
+    pass
 if __name__ == "__main__":
     pass
 
