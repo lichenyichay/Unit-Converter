@@ -180,8 +180,42 @@ def Vsudu(Slu=0.0,t=0.0) -> float:
         return Slu/t
     else:
         raise ValueError("参数无效！")
-def p() -> float:
-    pass
+
+def p(F = 0.0,S = 0.0,ρ = 0.0,g = 9.8, h=0.0) -> float:
+    if F != 0 and S != 0:
+        return F/S
+    elif ρ != 0 and h != 0 and g != 0:
+        return ρ*g*h
+    else:
+        raise ValueError("参数无效！")
+
+def I(U = 0.0,R = 0.0,Pgong = 0.0) -> float:
+    if U != 0 and R != 0:
+        return U/R
+    elif U != 0 and Pgong != 0:
+        return Pgong / U
+    else:
+        raise ValueError("参数无效！")
+
+def U(I = 0.0,R = 0.0,Pgong = 0.0) -> float:
+    if I != 0 and R != 0:
+        return I*R
+    elif I != 0 and Pgong != 0:
+        return Pgong / I
+    else:
+        raise ValueError("参数无效！")
+
+def R(I = 0.0,U = 0.0) -> float:
+    if U != 0 and I != 0:
+        return U/I
+    else:
+        raise ValueError("参数无效！")
+
+def Pgong(U=0.0,I=0.0) -> float:
+    if U != 0 and I != 0:
+        return U*I
+    else:
+        raise ValueError("参数无效！")
 if __name__ == "__main__":
     pass
 
