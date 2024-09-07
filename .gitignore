@@ -50,6 +50,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+.cph/
 
 # Translations
 *.mo
@@ -162,4 +163,5 @@ cython_debug/
 .idea/
 *.iml
 venv/
+# Visual Studio
 .vs/
