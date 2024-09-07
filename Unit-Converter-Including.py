@@ -1,6 +1,6 @@
 # Author:Chay
 # Time:2024/9/5 22:47
-# Release:Alpha 1.0.0
+# Release:1.0.0
 
 # 长度单位换算函数
 def mmtocm(x: float) -> float:
